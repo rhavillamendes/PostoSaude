@@ -17,15 +17,15 @@ public class EnderecoBean {
     
     public String novo() {
         endereco = new Endereco();
-        return "/public/endereco/new";
+        return "/public/especialidade/new";
     }
     
     public String editar() {
-        return "/public/endereco/new";
+        return "/public/especialidade/new";
     }
     
     public String exibir() {
-        return "/public/endereco/show";
+        return "/public/especialidade/show";
     }
     
     public String salvar() {
@@ -38,27 +38,27 @@ public class EnderecoBean {
     }
     
     public String excluir() {
-        EnderecRN enderecRN = new EnderecoRN();
-        avaliacaoRN.excluir(avaliacao);
+        EnderecoRN enderecoRN = new EnderecoRN();
+        enderecoRN.excluir(endereco);
         lista = null;
         
         return null;
     }
 
-    public List<Avaliacao> getLista() {
+    public List<Endereco> getLista() {
         if (lista == null) {
-            AvaliacaoRN pacienteRN = new AvaliacaoRN();
-            lista = pacienteRN.listar();
+            EnderecoRN enderecoRN = new EnderecoRN();
+            lista = enderecoRN.listar();
         }
         
         return lista;
     }
 
-    public Avaliacao getAvaliacao() {
-        return avaliacao;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setPaciente(Avaliacao avaliacao) {
-        this.avaliacao = avaliacao;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 }

@@ -47,8 +47,8 @@ public class AvaliacaoBean {
 
     public List<Avaliacao> getLista() {
         if (lista == null) {
-            AvaliacaoRN pacienteRN = new AvaliacaoRN();
-            lista = pacienteRN.listar();
+            AvaliacaoRN avaliacaoRN = new AvaliacaoRN();
+            lista = avaliacaoRN.listar();
         }
         
         return lista;
