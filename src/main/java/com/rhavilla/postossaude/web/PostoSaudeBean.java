@@ -2,7 +2,7 @@
 package com.rhavilla.postossaude.web;
 
 import com.rhavilla.postossaude.model.PostoSaude;
-import com.rhavilla.postossaude.model.PostoSaudeRN;
+import com.rhavilla.postossaude.rn.PostoSaudeRN;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;

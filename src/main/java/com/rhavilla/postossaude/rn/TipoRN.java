@@ -1,7 +1,8 @@
 
-package com.rhavilla.postossaude.model;
+package com.rhavilla.postossaude.rn;
 
 import com.rhavilla.postossaude.dao.TipoDAO;
+import com.rhavilla.postossaude.model.Tipo;
 import com.rhavilla.postossaude.util.DAOFactory;
 import java.util.List;
 

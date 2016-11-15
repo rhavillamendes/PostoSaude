@@ -1,7 +1,7 @@
 package com.rhavilla.postossaude.web;
 
 import com.rhavilla.postossaude.model.Tipo;
-import com.rhavilla.postossaude.model.TipoRN;
+import com.rhavilla.postossaude.rn.TipoRN;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;

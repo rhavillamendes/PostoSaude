@@ -2,7 +2,7 @@
 package com.rhavilla.postossaude.web;
 
 import com.rhavilla.postossaude.model.Avaliacao;
-import com.rhavilla.postossaude.model.AvaliacaoRN;
+import com.rhavilla.postossaude.rn.AvaliacaoRN;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;

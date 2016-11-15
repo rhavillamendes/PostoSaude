@@ -2,7 +2,7 @@
 package com.rhavilla.postossaude.web;
 
 import com.rhavilla.postossaude.model.Endereco;
-import com.rhavilla.postossaude.model.EnderecoRN;
+import com.rhavilla.postossaude.rn.EnderecoRN;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;

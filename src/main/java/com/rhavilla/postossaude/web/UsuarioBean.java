@@ -1,7 +1,7 @@
 package com.rhavilla.postossaude.web;
 
 import com.rhavilla.postossaude.model.Usuario;
-import com.rhavilla.postossaude.model.UsuarioRN;
+import com.rhavilla.postossaude.rn.UsuarioRN;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
