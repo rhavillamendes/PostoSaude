@@ -1,6 +1,7 @@
 package com.rhavilla.postossaude.dao;
 
 import com.rhavilla.postossaude.model.Tipo;
+import com.rhavilla.postossaude.util.HibernateUtil;
 import java.util.List;
 import org.hibernate.Session;
 
@@ -31,5 +32,19 @@ public class TipoDAO {
     
     public List<Tipo> listar(){
         return this.session.createCriteria(Tipo.class).list();
+    }
+    
+    public static void main(String[] args) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        
+        Tipo t = new Tipo();
+        t.setTipo("TIPO A");
+        
+        session.getTransaction().begin();
+        TipoDAO tipoDAO = new TipoDAO();
+        tipoDAO.setSession(session);
+        session.save(t);
+        session.getTransaction().commit();
+        
     }
 }
