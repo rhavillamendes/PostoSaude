@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Avaliacao 
@@ -15,7 +17,13 @@ public class Avaliacao
     private String nota;
     private String observacao;
     private Date data;
+    
+    @ManyToOne
+    @JoinColumn(name = "posto_saude_id")
     private PostoSaude postoSaude;
+    
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
     public int getId() {

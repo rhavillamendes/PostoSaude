@@ -4,6 +4,8 @@ package com.rhavilla.postossaude.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Usuario 
@@ -16,6 +18,9 @@ public class Usuario
    private String login;
    private String senha;
    private String matricula;
+   
+   @ManyToOne
+   @JoinColumn(name = "tipo_id")
    private Tipo tipo;
 
     public int getId() {

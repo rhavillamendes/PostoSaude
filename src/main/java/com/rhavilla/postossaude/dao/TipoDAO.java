@@ -34,17 +34,4 @@ public class TipoDAO {
         return this.session.createCriteria(Tipo.class).list();
     }
     
-    public static void main(String[] args) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        
-        Tipo t = new Tipo();
-        t.setTipo("TIPO A");
-        
-        session.getTransaction().begin();
-        TipoDAO tipoDAO = new TipoDAO();
-        tipoDAO.setSession(session);
-        session.save(t);
-        session.getTransaction().commit();
-        
-    }
 }
