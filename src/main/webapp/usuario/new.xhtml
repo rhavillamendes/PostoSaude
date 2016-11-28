@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Usuário</title>
+    </h:head>
+    <h:body>
+        <h1>
+            Usuários
+        </h1>
+        
+        <h:link value="Voltar" outcome="/usuario/index"/> |
+        <h:link value="Home" outcome="/index"/>
+        <br/><br/>
+
+        <h:form id="cadastro">
+            <h:messages/>
+            <h:inputHidden value="#{usuarioBean.usuario.id}"/>
+
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nome:" for="nome"/>
+                <h:inputText id="nome" label="Nome" value="#{usuarioBean.usuario.nome}">
+                </h:inputText>
+
+
+                <h:outputLabel value="Login:" for="login"/>
+                <h:inputText id="login" label="Login" value="#{usuarioBean.usuario.login}">
+
+                </h:inputText>
+
+
+                <h:outputLabel value="Senha:" for="senha"/>
+                <h:inputText id="senha" label="Senha" value="#{usuarioBean.usuario.senha}">
+
+                </h:inputText>
+
+
+                <h:outputLabel value="Matrícula:" for="matricula"/>
+                <h:inputText id="matricula" label="Matrícula" value="#{usuarioBean.usuario.matricula}">
+
+                </h:inputText>
+
+
+                <h:outputLabel value="Tipo:" for="tipo"/>
+
+                <h:selectOneMenu id="tipo" label="Tipo" value="#{usuarioBean.usuario.tipo}">
+                    <f:selectItems value="#{tipoBean.lista}"
+                                   var="item"
+                                   itemLabel="#{item.tipo}"
+                                   itemValue="#{item.id}"/>
+                </h:selectOneMenu>
+                
+                <h:commandButton action="#{usuarioBean.salvar}" value="Salvar"/>
+
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

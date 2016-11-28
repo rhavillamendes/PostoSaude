@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Posto Saúde</title>
+    </h:head>
+    <h:body>
+        <h1> Lista de Posto de Saúde</h1>
+
+        <h:link value="Voltar" outcome="/postosaude/index"/> |
+        <h:link value="Home" outcome="/index"/>
+        <br/><br/>
+
+        <h:form id="cadastro">
+            <h:messages/>
+            <h:inputHidden value="#{postoSaudeBean.postoSaude.id}"/>
+
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nome:" for="nome"/>
+                <h:inputText id="nome" label="Nome" value="#{postoSaudeBean.postoSaude.nome}">
+
+                </h:inputText>
+
+
+                <h:outputLabel value="Telefone:" for="telefone"/>
+                <h:inputText id="telefone" label="Telefone" value="#{postoSaudeBean.postoSaude.telefone}">
+
+                </h:inputText>
+
+
+
+                <h:outputLabel value="Horário Atendimento:" for="horarioAtendimento"/>
+                <h:inputText id="horarioAtendimento" label="Horário Atendimento" value="#{postoSaudeBean.postoSaude.horarioAtendimento}">
+                    <f:convertDateTime pattern="dd/mm/yyyy hh:mm:ss"/>
+                </h:inputText>
+
+
+                <h:outputLabel value="Endereço:" for="endereco"/>
+                <h:selectOneMenu id="postoSaude" label="Posto de Saude" value="#{postoSaudeBean.postoSaude.endereco}">
+                    <f:selectItems value="#{enderecoBean.lista}"
+                                   var="item"
+                                   itemLabel="#{item.logradouro}"
+                                   itemValue="#{item.id}"/>
+                </h:selectOneMenu>
+
+
+
+
+
+                <h:commandButton action="#{postoSaudeBean.salvar}" value="Salvar"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

@@ -17,15 +17,15 @@ public class AvaliacaoBean {
     
     public String novo() {
         avaliacao = new Avaliacao();
-        return "/public/avaliacao/new";
+        return "/avaliacao/new";
     }
     
     public String editar() {
-        return "/public/avaliacao/new";
+        return "/avaliacao/new";
     }
     
     public String exibir() {
-        return "/public/avaliacao/show";
+        return "/avaliacao/show";
     }
     
     public String salvar() {

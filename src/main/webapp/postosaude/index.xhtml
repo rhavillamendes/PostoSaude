@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Posto Saúde</title>
+    </h:head>
+    <h:body>
+        <h1>
+            Lista de Posto de Saúde
+
+        </h1>
+
+        <h:link value="Novo" outcome="/postosaude/new"/> |
+        <h:link value="Home" outcome="/index"/>
+        <br/><br/>
+        
+        <h:form>
+            <h:messages/>
+
+            <h:dataTable value="#{postoSaudeBean.lista}" var="postosaude" rules="rows" cellpadding="5"
+                         rendered="#{not empty postoSaudeBean.lista}">
+                <f:facet name="header">Listagem de Posto Saúde</f:facet>
+                <f:facet name="footer">Final da listagem</f:facet>
+
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                        #{postoSaudeBean.postoSaude.id}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Nome</f:facet>
+                        #{postoSaude.nome}
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">Telefone</f:facet>
+                        #{postoSaude.telefone}
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">Horário Atendimento</f:facet>
+                        #{postoSaude.horarioAtendimento}
+                </h:column>
+                
+                  <h:column>
+                    <f:facet name="header">Endereço</f:facet>
+                        #{postoSaude.endereco}
+                </h:column>
+                
+                
+
+                <h:column>
+                    <f:facet name="header">Ações</f:facet>
+
+                    <h:commandLink action="#{postoSaudeBean.editar}" value="Editar">
+                        <f:setPropertyActionListener target="#{postoSaudeBean.postoSaude}"
+                                                     value="#{postoSaude}" />
+                    </h:commandLink>
+
+                    <h:commandLink action="#{postoSaudeBean.excluir}" value="Excluir"
+                                   onclick="if (!confirm('Tem certeza que deseja excluir o Posto Saúde #{postoSaude.nome}?'))
+                                                   return false;">
+                        <f:setPropertyActionListener target="#{postoSaudeBean.postoSaude}"
+                                                     value="#{postoSaude}" />
+                    </h:commandLink>
+
+                    <h:commandLink action="#{postoSaudeBean.exibir}" value="Exibir">
+                        <f:setPropertyActionListener target="#{postoSaudeBean.postoSaude}"
+                                                     value="#{postoSaude}"/>
+                    </h:commandLink>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

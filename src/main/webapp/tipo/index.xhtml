@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Tipo</title>
+    </h:head>
+    <h:body>
+        <h1>
+           Tipos
+
+        </h1>
+
+        <h:link value="Novo" outcome="/tipo/new"/> |
+        <h:link value="Home" outcome="/index"/>
+        <br/><br/>
+
+        <h:form>
+            <h:messages/>
+
+            <h:dataTable value="#{tipoBean.lista}" var="tipo" rules="rows" cellpadding="5"
+                         rendered="#{not empty tipoBean.lista}">
+                <f:facet name="header">Tipos</f:facet>
+                <f:facet name="footer">Final de tipos</f:facet>
+
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                        #{tipoBean.tipo.id}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Tipo</f:facet>
+                        #{tipo.tipo}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Ações</f:facet>
+
+                    <h:commandLink action="#{tipoBean.editar}" value="Editar">
+                        <f:setPropertyActionListener target="#{tipoBean.tipo}"
+                                                     value="#{tipo}" />
+                    </h:commandLink>
+
+                    <h:commandLink action="#{tipoBean.excluir}" value="Excluir"
+                                   onclick="if (!confirm('Tem certeza que deseja excluir a tipo #{tipo.tipo}?'))
+                                               return false;">
+                        <f:setPropertyActionListener target="#{tipoBean.tipo}"
+                                                     value="#{tipo}" />
+                    </h:commandLink>
+
+                    <h:commandLink action="#{tipoBean.exibir}" value="Exibir">
+                        <f:setPropertyActionListener target="#{tipoBean.tipo}"
+                                                     value="#{tipo}"/>
+                    </h:commandLink>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

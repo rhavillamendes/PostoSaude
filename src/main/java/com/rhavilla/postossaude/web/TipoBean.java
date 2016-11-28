@@ -16,15 +16,15 @@ public class TipoBean {
     
     public String novo() {
         tipo = new Tipo();
-        return "/public/tipo/new";
+        return "/tipo/new";
     }
     
     public String editar() {
-        return "/public/tipo/new";
+        return "/tipo/new";
     }
     
     public String exibir() {
-        return "/public/tipo/show";
+        return "/tipo/show";
     }
     
     public String salvar() {
@@ -60,4 +60,14 @@ public class TipoBean {
     public void setPaciente(Tipo tipo) {
         this.tipo = tipo;
     }
+
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+    
+    
 }

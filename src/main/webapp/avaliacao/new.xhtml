@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Avaliação</title>
+    </h:head>
+    <h:body>
+        <h1>Avaliações</h1>
+
+        <h:link value="Voltar" outcome="/avaliacao/index"/> |
+        <h:link value="Home" outcome="/index"/>
+        <br/><br/>
+
+        <h:form id="cadastro">
+            <h:messages/>
+            <h:inputHidden value="#{avaliacaoBean.avaliacao.id}"/>
+
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nota:" for="nota"/>
+                <h:inputText id="nome" label="Nome" value="#{avaliacaoBean.avaliacao.nota}"
+                             size="40" maxlength="40" required="true"
+                             requiredMessage="O campo nota é obrigatório">
+                    <f:validateLength minimum="10" maximum="70"/>
+                </h:inputText>
+
+                <h:outputLabel value="Observação:" for="observacao"/>
+                <h:inputTextarea id="observacao" label="Observação" value="#{avaliacaoBean.avaliacao.observacao}"
+                                 cols="40">
+                    <f:validateLength minimum="10" maximum="70"/>
+                </h:inputTextarea>
+
+                <h:outputLabel value="Data:" for="data"/>
+                <h:inputText id="data" label="Data" value="#{avaliacaoBean.avaliacao.data}"
+                             size="40" maxlength="40" required="true"
+                             requiredMessage="O campo data é obrigatório">
+                    <f:validateLength minimum="10" maximum="70"/>
+                </h:inputText>
+
+                <h:outputLabel value="Posto de Saude:" for="postoSaude"/>
+                <h:selectOneMenu id="avaliacao" label="Avaliação" value="#{avaliacaoBean.avaliacao.postoSaude}">
+                    <f:selectItems value="#{postoSaudeBean.lista}"
+                                   var="item"
+                                   itemLabel="#{item.nome}"
+                                   itemValue="#{item.id}"/>
+                </h:selectOneMenu>
+
+
+                <h:outputLabel value="Usuário:" for="usuario"/>
+                <h:selectOneMenu id="usuario" label="Usuário" value="#{avaliacaoBean.avaliacao.usuario}">
+                    <f:selectItems value="#{usuarioBean.lista}"
+                                   var="item"
+                                   itemLabel="#{item.nome}"
+                                   itemValue="#{item.id}"/>
+                </h:selectOneMenu>
+
+                <h:commandButton action="#{avaliacaoBean.salvar}" value="Salvar"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

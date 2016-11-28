@@ -1,4 +1,3 @@
-
 package com.rhavilla.postossaude.util;
 
 import com.rhavilla.postossaude.dao.AvaliacaoDAO;
@@ -11,27 +10,50 @@ import com.rhavilla.postossaude.dao.UsuarioDAO;
 public class DAOFactory {
 
     public static AvaliacaoDAO obterPacienteDAO() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        AvaliacaoDAO avaliacaoDAO = new AvaliacaoDAO();
+        avaliacaoDAO.setSession(HibernateUtil.getSessionFactory().getCurrentSession());
+
+        return avaliacaoDAO;
+
     }
 
     public static EnderecoDAO obterEnderecoDAO() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        EnderecoDAO enderecoDAO = new EnderecoDAO();
+        enderecoDAO.setSession(HibernateUtil.getSessionFactory().getCurrentSession());
+
+        return enderecoDAO;
+
     }
 
     public static EspecialidadeDAO obterEspecialidadeDAO() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        EspecialidadeDAO especialidadeDAO = new EspecialidadeDAO();
+        especialidadeDAO.setSession(HibernateUtil.getSessionFactory().getCurrentSession());
+
+        return especialidadeDAO;
     }
 
     public static PostoSaudeDAO obterPostoSaudeDAO() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PostoSaudeDAO postosaudeDAO = new PostoSaudeDAO();
+        postosaudeDAO.setSession(HibernateUtil.getSessionFactory().getCurrentSession());
+
+        return postosaudeDAO;
+
     }
 
     public static TipoDAO obterTipoDAO() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        TipoDAO tipoDAO = new TipoDAO();
+        tipoDAO.setSession(HibernateUtil.getSessionFactory().getCurrentSession());
+
+        return tipoDAO;
+
     }
 
     public static UsuarioDAO obterUsuarioDAO() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        usuarioDAO.setSession(HibernateUtil.getSessionFactory().getCurrentSession());
+
+        return usuarioDAO;
+
     }
-    
+
 }

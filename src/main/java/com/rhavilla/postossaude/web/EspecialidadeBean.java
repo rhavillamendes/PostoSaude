@@ -17,15 +17,15 @@ public class EspecialidadeBean {
     
     public String novo() {
         especialidade = new Especialidade();
-        return "/public/especialidade/new";
+        return "/especialidade/new";
     }
     
     public String editar() {
-        return "/public/especialidade/new";
+        return "/especialidade/new";
     }
     
     public String exibir() {
-        return "/public/especialidade/show";
+        return "/especialidade/show";
     }
     
     public String salvar() {
@@ -54,11 +54,11 @@ public class EspecialidadeBean {
         return lista;
     }
 
-    public Especialidade getAvaliacao() {
+    public Especialidade getEspecialidade() {
         return especialidade;
     }
 
-    public void setPaciente(Especialidade especialidade) {
+    public void setEspecialidade(Especialidade especialidade) {
         this.especialidade = especialidade;
     }
 }

@@ -17,15 +17,15 @@ public class PostoSaudeBean {
     
     public String novo() {
         postoSaude = new PostoSaude();
-        return "/public/postoSaude/new";
+        return "/postoSaude/new";
     }
     
     public String editar() {
-        return "/public/postoSaude/new";
+        return "/postoSaude/new";
     }
     
     public String exibir() {
-        return "/public/postoSaude/show";
+        return "/postoSaude/show";
     }
     
     public String salvar() {

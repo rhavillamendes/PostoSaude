@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Endereço</title>
+    </h:head>
+    
+    <h:body>
+        <h1>Endereços</h1>
+        
+        <h:link value="Voltar" outcome="/endereco/index"/> |
+        <h:link value="Home" outcome="/index"/>
+        <br/><br/>
+        
+        <h:form id="cadastro">
+                    <h:messages/>
+                    <h:inputHidden value="#{enderecoBean.endereco.id}"/>
+
+                    <h:panelGrid columns="2">
+                      
+                        
+                         <h:outputLabel value="Logradouro:" for="logradouro"/>
+                        <h:inputText id="logradouro" label="Logradouro" value="#{enderecoBean.endereco.logradouro}"
+                                     size="40" maxlength="40" required="true"
+                                     requiredMessage="O campo logradouro é obrigatório">
+                            
+                        </h:inputText>
+                        
+                        
+                        
+                         <h:outputLabel value="Complemento:" for="complemento"/>
+                        <h:inputText id="complemento" label="Complemento" value="#{enderecoBean.endereco.complemento}"
+                                     size="40" maxlength="40" required="true"
+                                     requiredMessage="O campo complmento é obrigatório">
+                            
+                        </h:inputText>
+                        
+                        
+                        
+                        <h:outputLabel value="Cep:" for="cep"/>
+                        <h:inputText id="cep" label="Cep" value="#{enderecoBean.endereco.cep}"
+                                     size="40" maxlength="40" required="true"
+                                     requiredMessage="O campo cep é obrigatório">
+                           
+                        </h:inputText>
+                        
+                        
+                        
+                        
+                         <h:outputLabel value="Geolocalização:" for="geolocalizacao"/>
+                        <h:inputText id="geolocalizacao" label="Geolocalização" value="#{enderecoBean.endereco.geolocalizacao}"
+                                     size="40" maxlength="40" required="true">
+                            
+                        </h:inputText>
+
+                        <h:commandButton action="#{enderecoBean.salvar}" value="Salvar"/>
+                    </h:panelGrid>
+                </h:form>
+    </h:body>
+</html>
+

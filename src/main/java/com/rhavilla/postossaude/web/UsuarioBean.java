@@ -16,15 +16,15 @@ public class UsuarioBean {
     
     public String novo() {
         usuario = new Usuario();
-        return "/public/usuario/new";
+        return "/usuario/new";
     }
     
     public String editar() {
-        return "/public/usuario/new";
+        return "/usuario/new";
     }
     
     public String exibir() {
-        return "/public/usuario/show";
+        return "/usuario/show";
     }
     
     public String salvar() {

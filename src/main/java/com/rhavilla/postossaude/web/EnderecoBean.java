@@ -1,4 +1,3 @@
-
 package com.rhavilla.postossaude.web;
 
 import com.rhavilla.postossaude.model.Endereco;
@@ -9,39 +8,41 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 
 
+
 @ManagedBean
 @RequestScoped
 public class EnderecoBean {
+
     private Endereco endereco = new Endereco();
     private List<Endereco> lista;
-    
+
     public String novo() {
         endereco = new Endereco();
-        return "/public/especialidade/new";
+        return "/endereco/new";
     }
-    
+
     public String editar() {
-        return "/public/especialidade/new";
+        return "/endereco/new";
     }
-    
+
     public String exibir() {
-        return "/public/especialidade/show";
+        return "/endereco/show";
     }
-    
+
     public String salvar() {
         FacesContext context = FacesContext.getCurrentInstance();
-        
+
         EnderecoRN enderecoRN = new EnderecoRN();
         enderecoRN.salvar(endereco);
-        
+
         return "index";
     }
-    
+
     public String excluir() {
         EnderecoRN enderecoRN = new EnderecoRN();
         enderecoRN.excluir(endereco);
         lista = null;
-        
+
         return null;
     }
 
@@ -50,7 +51,7 @@ public class EnderecoBean {
             EnderecoRN enderecoRN = new EnderecoRN();
             lista = enderecoRN.listar();
         }
-        
+
         return lista;
     }
 

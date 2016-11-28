@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Endereço</title>
+    </h:head>
+    <h:body>
+        <h1>
+            Endereços
+
+        </h1>
+        
+        <h:link value="Novo" outcome="/endereco/new"/> |
+        <h:link value="Home" outcome="/index"/>
+        <br/><br/>        
+        
+        <h:form>
+            <h:messages/>
+
+            <h:dataTable value="#{enderecoBean.lista}" var="endereco" rules="rows" cellpadding="5"
+                         rendered="#{not empty enderecoBean.lista}">
+                <f:facet name="header">Listagem de endereços</f:facet>
+                <f:facet name="footer">Final da listagem</f:facet>
+
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                        #{enderecoBean.endereco.id}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Logradouro</f:facet>
+                        #{endereco.logradouro}
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">Complemento</f:facet>
+                        #{endereco.complemento}
+                </h:column>
+                
+                
+                <h:column>
+                    <f:facet name="header">Cep</f:facet>
+                        #{endereco.cep}
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">Geolocalização</f:facet>
+                        #{endereco.geolocalizacao}
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">Ações</f:facet>
+
+                    <h:commandLink action="#{enderecoBean.editar}" value="Editar">
+                        <f:setPropertyActionListener target="#{enderecoBean.endereco}"
+                                                     value="#{endereco}" />
+                    </h:commandLink>
+
+                    <h:commandLink action="#{enderecoBean.excluir}" value="Excluir"
+                                   onclick="if (!confirm('Tem certeza que deseja excluir o endereço #{endereco.cep}?'))
+                                                   return false;">
+                        <f:setPropertyActionListener target="#{enderecoBean.endereco}"
+                                                     value="#{endereco}" />
+                    </h:commandLink>
+
+                    <h:commandLink action="#{enderecoBean.exibir}" value="Exibir">
+                        <f:setPropertyActionListener target="#{enderecoBean.endereco}"
+                                                     value="#{endereco}"/>
+                    </h:commandLink>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+
